@@ -1,0 +1,12 @@
+<% if @is_answer_correct %>
+  <%= turbo_stream.replace "submit-button", partial: "correct" %>
+<% else %>
+  <%= turbo_stream.replace "submit-button", partial: "incorrect" %>
+<% end %>
+
+<% if @has_next_question %>
+  <%= turbo_stream.after "result", partial: "next_button" %>
+<% else %>
+  <%= turbo_stream.after "result", partial: "end_button" %>
+  <%= turbo_stream.after "result", partial: "x_share_button" %>
+<% end %>
