@@ -17,6 +17,17 @@
 
     <%= yield :head %>
 
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-C0C4EJZ733"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-C0C4EJZ733');
+    </script>
+    <!-- Google Analytics 終了 -->
+
     <link rel="manifest" href="/manifest.json">
     <link rel="icon" href="/icon.png" type="image/png">
     <link rel="icon" href="/icon.svg" type="image/svg+xml">
