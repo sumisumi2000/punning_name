@@ -7,6 +7,6 @@
 <% if @has_next_question %>
   <%= turbo_stream.after "result", partial: "next_button" %>
 <% else %>
-  <%= turbo_stream.after "result", partial: "end_button" %>
+  <%= turbo_stream.after "result", partial: "ending" %>
   <%= turbo_stream.after "result", partial: "x_share_button" %>
 <% end %>
