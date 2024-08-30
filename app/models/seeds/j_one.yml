@@ -1,0 +1,60 @@
+sapporo:
+  id: 1
+  name: 北海道コンサドーレ札幌
+kashima:
+  id: 2
+  name: 鹿島アントラーズ
+urawa:
+  id: 3
+  name: 浦和レッドダイヤモンズ
+kashiwa:
+  id: 4
+  name: 柏レイソル
+fctokyo:
+  id: 5
+  name: FC東京
+verdy:
+  id: 6
+  name: 東京ヴェルディ1969
+machida:
+  id: 7
+  name: FC町田ゼルビア
+kawasaki:
+  id: 8
+  name: 川崎フロンターレ
+marinosu:
+  id: 9
+  name: 横浜F・マリノス
+shounann:
+  id: 10
+  name: 湘南ベルマーレ
+niigata:
+  id: 11
+  name: アルビレックス新潟
+iwata:
+  id: 12
+  name: ジュビロ磐田
+nagoya:
+  id: 13
+  name: 名古屋グランパスエイト
+kyoto:
+  id: 14
+  name: 京都サンガF.C.
+gamba:
+  id: 15
+  name: ガンバ大阪
+cerezo:
+  id: 16
+  name: セレッソ大阪
+kobe:
+  id: 17
+  name: ヴィッセル神戸
+hiroshima:
+  id: 18
+  name: サンフレッテェ広島F.C
+hukuoka:
+  id: 19
+  name: アビスパ福岡
+tosu:
+  id: 20
+  name: サガン鳥栖
