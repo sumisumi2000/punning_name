@@ -9,7 +9,7 @@
           <% @choices.each_with_index do |choice, idx| %>
             <div class="my-8">
             <%= form.radio_button :user_choice, "#{idx}-#{choice}", class: "radio choice", id: "choice-#{idx}" %>
-            <%= form.label :user_choice, choice %><br>
+            <%= form.label :user_choice, choice, for: "choice-#{idx}" %><br>
             </div>
           <% end %>
         </div>
