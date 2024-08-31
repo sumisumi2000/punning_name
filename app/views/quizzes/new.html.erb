@@ -4,7 +4,7 @@
 
     <!-- フォントをランダムで生成 -->
     <div class=<%= use_kaisei_font?(session[:quiz_count]) ? "font-kaisei" : "font-dela" %>>
-      <%= form_with url: check_path, method: :post, class: "text-5xl" do |form| %>
+      <%= form_with url: quizzes_path, method: :post, class: "text-5xl" do |form| %>
         <div id="choices">
           <% @choices.each_with_index do |choice, idx| %>
             <div class="my-8">

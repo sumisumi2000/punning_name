@@ -12,7 +12,5 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   root "quizzes#new"
 
-  resource :quizzes, only: %i[new, destroy]
-  post "/quizzes/check", to: "quizzes#check", as: :check
-  get "/quizzes/answer", to: "quizzes#answer", as: :answer
+  resource :quizzes, only: %i[new create show destroy]
 end

@@ -10,7 +10,7 @@ class QuizzesController < ApplicationController
     @choices = get_choices
   end
 
-  def check
+  def create
     # ユーザーが選んだ選択肢から選択肢番号と選択肢の値に分割
     @choice_number, user_choice = params[:user_choice]&.split("-")
     # 正誤判定
@@ -22,7 +22,7 @@ class QuizzesController < ApplicationController
     @has_next_question = session[:quiz_count] < Quiz::TOTAL_QUESTIONS
   end
 
-  def answer
+  def show
     @answers = Answer.all.map(&:name) unless @has_next_question
   end
 
