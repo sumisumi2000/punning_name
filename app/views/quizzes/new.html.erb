@@ -1,5 +1,5 @@
 <div class="w-5/6 mx-auto max-w-screen-xl text-center mt-48">
-  <%= "#{session[:quiz_count]}問目" %>
+  <div class="font-noto text-3xl"><%= "#{session[:quiz_count]}問目" %></div>
 
   <!-- フォントをランダムで生成 -->
   <div class="<%= @font_name ? "font-kaisei" : "font-dela" %>">
