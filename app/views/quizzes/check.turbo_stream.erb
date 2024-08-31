@@ -1,12 +1,19 @@
+<!-- 問題の正解 or 不正解を表示 -->
 <% if @is_answer_correct %>
   <%= turbo_stream.replace "submit-button", partial: "correct" %>
 <% else %>
   <%= turbo_stream.replace "submit-button", partial: "incorrect" %>
 <% end %>
 
+<!-- 「次の問題へ」 or 「終了」ボタンを表示 -->
 <% if @has_next_question %>
   <%= turbo_stream.after "result", partial: "next_button" %>
 <% else %>
   <%= turbo_stream.after "result", partial: "ending" %>
   <%= turbo_stream.after "result", partial: "x_share_button" %>
 <% end %>
+
+<!-- 選択されたラジオボタンを選択不能に更新 -->
+<%= turbo_stream.replace "choice-#{@choice_number}", partial: "disable_checked_choice" %>
+<!-- 残りのラジオボタンを選択不能に更新 -->
+<%= turbo_stream.replace_all ".choice", partial: "disable_choices" %>

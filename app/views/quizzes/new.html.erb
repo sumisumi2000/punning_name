@@ -4,12 +4,14 @@
   <!-- フォントをランダムで生成 -->
   <div class="<%= @font_name ? "font-kaisei" : "font-dela" %>">
     <%= form_with url: check_path, method: :post, class: "text-5xl" do |form| %>
-      <% @choices.each do |choice| %>
-        <div class="my-8">
-        <%= form.radio_button :name, choice, class: "radio" %>
-        <%= form.label :name, choice %><br>
-        </div>
-      <% end %>
+      <div id="choices">
+        <% @choices.each_with_index do |choice, idx| %>
+          <div class="my-8">
+          <%= form.radio_button :user_choice, "#{idx}-#{choice}", class: "radio choice", id: "choice-#{idx}" %>
+          <%= form.label :user_choice, choice %><br>
+          </div>
+        <% end %>
+      </div>
       <%= form.submit '解答', id: "submit-button", class: "font-noto btn btn-lg" %>
     <% end %>
   </div>
