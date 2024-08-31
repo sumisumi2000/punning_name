@@ -5,12 +5,13 @@
   <%= turbo_stream.replace "submit-button", partial: "incorrect" %>
 <% end %>
 
-<!-- 「次の問題へ」 or 「終了」ボタンを表示 -->
+<!-- 「次の問題へ」 or 終了画面を表示 -->
 <% if @has_next_question %>
-  <%= turbo_stream.after "result", partial: "next_button" %>
+  <%= turbo_stream.after "quiz_space", partial: "quizzes/buttons/next_button" %>
 <% else %>
-  <%= turbo_stream.after "result", partial: "ending" %>
-  <%= turbo_stream.after "result", partial: "x_share_button" %>
+  <%= turbo_stream.after "quiz_space", partial: "ending" %>
+  <%= turbo_stream.after "quiz_space", partial: "quizzes/buttons/answer_button" %>
+  <%= turbo_stream.after "quiz_space", partial: "quizzes/buttons/x_share_button" %>
 <% end %>
 
 <!-- 選択されたラジオボタンを選択不能に更新 -->

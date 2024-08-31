@@ -1,18 +1,20 @@
 <div class="w-5/6 mx-auto max-w-screen-xl text-center mt-48">
-  <div class="font-noto text-3xl"><%= "#{session[:quiz_count]}問目" %></div>
+  <div id="quiz_space">
+    <div class="font-noto text-3xl"><%= "#{session[:quiz_count]}問目" %></div>
 
-  <!-- フォントをランダムで生成 -->
-  <div class="<%= @font_name ? "font-kaisei" : "font-dela" %>">
-    <%= form_with url: check_path, method: :post, class: "text-5xl" do |form| %>
-      <div id="choices">
-        <% @choices.each_with_index do |choice, idx| %>
-          <div class="my-8">
-          <%= form.radio_button :user_choice, "#{idx}-#{choice}", class: "radio choice", id: "choice-#{idx}" %>
-          <%= form.label :user_choice, choice %><br>
-          </div>
-        <% end %>
-      </div>
-      <%= form.submit '解答', id: "submit-button", class: "font-noto btn btn-lg" %>
-    <% end %>
+    <!-- フォントをランダムで生成 -->
+    <div class=<%= use_kaisei_font?(session[:quiz_count]) ? "font-kaisei" : "font-dela" %>>
+      <%= form_with url: check_path, method: :post, class: "text-5xl" do |form| %>
+        <div id="choices">
+          <% @choices.each_with_index do |choice, idx| %>
+            <div class="my-8">
+            <%= form.radio_button :user_choice, "#{idx}-#{choice}", class: "radio choice", id: "choice-#{idx}" %>
+            <%= form.label :user_choice, choice %><br>
+            </div>
+          <% end %>
+        </div>
+        <%= form.submit '解答', id: "submit-button", class: "font-noto btn btn-lg" %>
+      <% end %>
+    </div>
   </div>
 </div>

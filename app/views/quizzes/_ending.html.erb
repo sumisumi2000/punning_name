@@ -1,2 +1,4 @@
-<%= link_to "終了", quizzes_path, data: { turbo_method: :delete }, class: "font-noto btn btn-lg" %>
-<%= "#{session[:correct_count]}問正解！！" %>
+<div class="font-noto">
+  <%= link_to "終了", quizzes_path, data: { turbo_method: :delete }, class: "btn btn-lg" %>
+  <div class="text-5xl"><%= "#{session[:correct_count]}問正解！！" %></div>
+</div>

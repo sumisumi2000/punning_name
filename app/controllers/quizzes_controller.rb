@@ -1,11 +1,6 @@
 class QuizzesController < ApplicationController
   before_action :reset_quiz, only: %i[new]
 
-  # 問題数
-  QUIZ_NUM = 7
-  # kaisei フォントの問題
-  KAISEI = [ 1, 3, 5 ]
-
   def new
     # セッションに問題数を保存
     session[:quiz_count] ||= 0
@@ -13,9 +8,6 @@ class QuizzesController < ApplicationController
 
     # 選択肢を設定
     @choices = get_choices
-
-    # 問題に応じてフォントを設定
-    @font_name = KAISEI.include?(session[:quiz_count])
   end
 
   def check
@@ -27,7 +19,11 @@ class QuizzesController < ApplicationController
     session[:correct_count] ||= 0
     session[:correct_count] += 1 if @is_answer_correct
     # 次の問題があるか判定
-    @has_next_question = session[:quiz_count] < QUIZ_NUM
+    @has_next_question = session[:quiz_count] < Quiz::TOTAL_QUESTIONS
+  end
+
+  def answer
+    @answers = Answer.all.map(&:name) unless @has_next_question
   end
 
   def destroy
@@ -52,6 +48,6 @@ class QuizzesController < ApplicationController
   # クイズが問題上限に達したらセッションをリセット
   def reset_quiz
     session[:quiz_count] ||= 0
-    reset_session if session[:quiz_count] >= QUIZ_NUM
+    reset_session if session[:quiz_count] >= Quiz::TOTAL_QUESTIONS
   end
 end

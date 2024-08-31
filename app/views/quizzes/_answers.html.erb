@@ -1,0 +1,6 @@
+<% answers.each_with_index do |answer, idx| %>
+  <div class="font-noto text-3xl"><%= "#{idx + 1}問目" %></div>
+  <div class=<%= use_kaisei_font?(idx + 1) ? "font-kaisei" : "font-dela" %>>
+    <div class="my-8 text-5xl"><%= answer %></div>
+  </div>
+<% end %>

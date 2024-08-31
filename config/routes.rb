@@ -14,4 +14,5 @@ Rails.application.routes.draw do
 
   resource :quizzes, only: %i[new, destroy]
   post "/quizzes/check", to: "quizzes#check", as: :check
+  get "/quizzes/answer", to: "quizzes#answer", as: :answer
 end

@@ -1,4 +1,5 @@
 module ApplicationHelper
+  # 正解数に応じてお祝いの言葉を作成
   def generate_congratulations
     case session[:correct_count]
     when 1
@@ -16,5 +17,10 @@ module ApplicationHelper
     when 7
       "全ての問題を正解しました！最高のパフォーマンスです！"
     end
+  end
+
+  # kaisei フォントを使用するかどうかを判定
+  def use_kaisei_font?(num)
+    Quiz::KAISEI_QUESTIONS.include?(num)
   end
 end
