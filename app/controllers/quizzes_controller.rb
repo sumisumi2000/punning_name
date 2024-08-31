@@ -23,7 +23,7 @@ class QuizzesController < ApplicationController
   end
 
   def show
-    @answers = Answer.all.map(&:name) unless @has_next_question
+    @answers = Answer.all.map(&:name)
   end
 
   def destroy
