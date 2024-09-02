@@ -39,6 +39,12 @@
   </head>
 
   <body>
-    <%= yield %>
+    <div class="bg-neutral-content min-h-screen w-full relative pb-32">
+      <%= render "shared/header" %>
+      <%= yield %>
+      <div class="absolute bottom-0 w-full">
+        <%= render "shared/footer" %>
+      </div>
+    </div>
   </body>
 </html>
