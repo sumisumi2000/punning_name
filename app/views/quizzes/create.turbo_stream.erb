@@ -1,17 +1,19 @@
+<!-- 解答ボタンを非表示 -->
+<%= turbo_stream.remove "submit_button" %>
 <!-- 問題の正解 or 不正解を表示 -->
 <% if @is_answer_correct %>
-  <%= turbo_stream.replace "submit-button", partial: "correct" %>
+  <%= turbo_stream.append "answer_space", partial: "correct" %>
 <% else %>
-  <%= turbo_stream.replace "submit-button", partial: "incorrect" %>
+  <%= turbo_stream.append "answer_space", partial: "incorrect" %>
 <% end %>
 
 <!-- 「次の問題へ」 or 終了画面を表示 -->
 <% if @has_next_question %>
-  <%= turbo_stream.after "quiz_space", partial: "quizzes/buttons/next_button" %>
+  <%= turbo_stream.append "answer_space", partial: "quizzes/buttons/next_button" %>
 <% else %>
-  <%= turbo_stream.after "quiz_space", partial: "ending" %>
-  <%= turbo_stream.after "quiz_space", partial: "quizzes/buttons/answer_button" %>
-  <%= turbo_stream.after "quiz_space", partial: "quizzes/buttons/x_share_button" %>
+  <%= turbo_stream.append "answer_space", partial: "ending" %>
+  <%= turbo_stream.append "answer_space", partial: "quizzes/buttons/answer_button" %>
+  <%= turbo_stream.append "answer_space", partial: "quizzes/buttons/x_share_button" %>
 <% end %>
 
 <!-- 選択されたラジオボタンを選択不能に更新 -->
