@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Jリーグのチーム名を当てるクイズ</title>
     <!-- Twitter リンクカード -->
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="" />
@@ -10,13 +9,12 @@
     <meta property="og:description" content="少し違うチーム名、ファンのあなたなら気づくはず" />
     <meta property="og:image" content="https://i.gyazo.com/7888539a0445471ba604cc2bbfd268ba.png" />
     <!-- Twitter リンクカードここまで -->
-    <title><%= content_for(:title) || "Myapp" %></title>
+    <title>Jリーグのチーム名を当てるクイズ</title>
+    <%= favicon_link_tag image_path('favicon.png'), type: 'image/png' %>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
-
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-C0C4EJZ733"></script>

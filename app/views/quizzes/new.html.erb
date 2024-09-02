@@ -1,8 +1,8 @@
-<div class="w-5/6 mx-auto max-w-screen-xl text-center mt-16 lg:mt-8">
+<div class="w-5/6 mx-auto max-w-screen-xl text-center mt-16 lg:mt-8 2xl:mt-16">
   <div id="quiz_space">
     <div class="font-noto">
-      <div class="text-base md:text-xl text-neutral my-4 md:my-12 lg:my-2">実在するチーム名を選んでね！</div>
-      <div class="text-xl md:text-3xl lg:text-2xl font-semibold my-6 md:my-10 lg:my-4"><%= "問題　#{session[:quiz_count]}/#{Quiz::TOTAL_QUESTIONS}" %></div>
+      <div class="text-base md:text-xl text-neutral my-4 md:my-12 lg:my-2 2xl:my-12">実在するチーム名を選んでね！</div>
+      <div class="text-xl md:text-3xl lg:text-2xl font-semibold my-6 md:my-10 lg:my-4 2xl:my-10"><%= "問題　#{session[:quiz_count]}/#{Quiz::TOTAL_QUESTIONS}" %></div>
     </div>
     <!-- フォントをランダムで生成 -->
     <div class=<%= use_kaisei_font?(session[:quiz_count]) ? "font-kaisei" : "font-dela" %>>
@@ -15,7 +15,7 @@
             </div>
           <% end %>
         </div>
-        <%= form.submit '解答', id: "submit-button", class: "font-noto btn md:btn-lg md:my-6 lg:my-0" %>
+        <%= form.submit '解答', id: "submit-button", class: "font-noto btn md:btn-lg md:my-6 lg:my-0 2xl:my-6" %>
       <% end %>
     </div>
   </div>
