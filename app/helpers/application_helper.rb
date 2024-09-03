@@ -2,6 +2,8 @@ module ApplicationHelper
   # 正解数に応じてお祝いの言葉を作成
   def generate_congratulations
     case session[:correct_count]
+    when 0
+      "まだまだこれから！もう一度チャレンジしてみましょう！"
     when 1
       "いいスタートですね！次も頑張ってください！"
     when 2
