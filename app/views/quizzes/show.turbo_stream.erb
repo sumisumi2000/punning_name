@@ -1,4 +1,6 @@
 <!-- 回答表示ボタンを取り除く -->
 <%= turbo_stream.remove "answer-button" %>
+<!-- 正解不正解を取り除く -->
+<%= turbo_stream.remove "result" %>
 <!-- 回答を表示 -->
 <%= turbo_stream.replace "quiz_space", partial: "answers", locals: { answers: @answers } %>
