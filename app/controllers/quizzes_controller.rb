@@ -41,6 +41,8 @@ class QuizzesController < ApplicationController
   # 3 -> 9 ~ 12
   # 4 -> 13 ~ 16
   # 5 -> 17 ~ 20
+  # 6 -> 21 ~ 24
+  # 7 -> 25 ~ 28
   def get_choices
     Quiz.where(id: (session[:quiz_count] * 4 - 3)..session[:quiz_count] * 4).map(&:name).shuffle
   end
