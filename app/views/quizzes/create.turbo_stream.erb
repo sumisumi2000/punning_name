@@ -9,11 +9,9 @@
 
 <!-- 「次の問題へ」 or 終了画面を表示 -->
 <% if @has_next_question %>
-  <%= turbo_stream.append "answer_space", partial: "quizzes/buttons/next_button" %>
+  <%= turbo_stream.append "answer_space", partial: "quizzes/next_button" %>
 <% else %>
-  <%= turbo_stream.append "answer_space", partial: "ending" %>
-  <%= turbo_stream.append "answer_space", partial: "quizzes/buttons/answer_button" %>
-  <%= turbo_stream.append "answer_space", partial: "quizzes/buttons/x_share_button" %>
+  <%= turbo_stream.after "answer_space", partial: "ending" %>
 <% end %>
 
 <!-- 選択されたラジオボタンを選択不能に更新 -->

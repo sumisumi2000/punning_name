@@ -1,4 +1,10 @@
 <div class="font-noto">
-  <%= link_to "終了", quizzes_path, data: { turbo_method: :delete }, class: "btn btn-lg" %>
-  <div class="text-5xl"><%= "#{session[:correct_count]}問正解！！" %></div>
+  <div class="flex mb-6 lg:mb-12 mt-4 md:mt-6 lg:mt-8 2xl:mt-4 justify-center">
+    <%= link_to "解答を見る", quizzes_path, data: { turbo_stream: true }, class: "btn md:btn-lg btn-outline btn-success mr-6", id: "answer-button" %>
+    <%= link_to "https://twitter.com/intent/tweet?url=#{root_url}&text=#{session[:correct_count]}問正解！！%0a#{generate_congratulations}！%0a%0a%23RUNTEQ祭%0a%0a", :onclick=>"window.open(this.href,'hoge', 'height=480, width=640');return false;", rel: "noopener noreferrer", data: { toggle: "tooltip", placement: "bottom" } do %>
+      <button class="btn md:btn-lg btn-outline">X でシェア</button>
+    <% end %>
+  </div>
+  <div class="text-4xl md:text-5xl text-primary animate-text-pop-up-top"><%= "#{session[:correct_count]}問正解！！" %></div>
+  <%= link_to "終了する", quizzes_path, data: { turbo_method: :delete }, class: "btn md:btn-lg btn-secondary btn-outline mt-4 lg:mt-6" %>
 </div>
