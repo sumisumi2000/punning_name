@@ -1,7 +1,7 @@
 <div class="font-noto">
   <div class="flex mb-6 lg:mb-12 mt-4 md:mt-6 lg:mt-8 2xl:mt-4 justify-center">
     <%= link_to "解答を見る", quizzes_path, data: { turbo_stream: true }, class: "btn md:btn-lg btn-outline btn-success mr-6", id: "answer-button" %>
-    <%= link_to "https://twitter.com/intent/tweet?url=#{root_url}&text=#{session[:correct_count]}問正解！！%0a#{generate_congratulations}！%0a%0a%23RUNTEQ祭%0a%0a", :onclick=>"window.open(this.href,'hoge', 'height=480, width=640');return false;", rel: "noopener noreferrer", data: { toggle: "tooltip", placement: "bottom" } do %>
+    <%= link_to "https://twitter.com/intent/tweet?url=#{root_url}&text=#{session[:correct_count]}問正解！！%0a#{generate_congratulations}！%0a%0a%23RUNTEQ祭　%23Jリーグのチーム名を当てるクイズ%0a%0a", :onclick=>"window.open(this.href,'hoge', 'height=480, width=640');return false;", rel: "noopener noreferrer", data: { toggle: "tooltip", placement: "bottom" } do %>
       <button class="btn md:btn-lg btn-outline">X でシェア</button>
     <% end %>
   </div>
